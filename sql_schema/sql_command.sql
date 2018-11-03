@@ -315,7 +315,7 @@ create table commentLevel(
     primary key(comment_id)
 );
 
-insert into commentLevel(txt_level) values("Excellent","Good","Not bad","Awful");
+insert into commentLevel(txt_level) values("Excellent"),("Good"),("Not bad"),("Awful");
 
 create table comment(
     comment_id varchar(20) not null,
