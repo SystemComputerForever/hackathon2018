@@ -4,6 +4,7 @@
     $dsn = getenv('MYSQL_DSN');
     $user = getenv('MYSQL_USER');
     $password = getenv('MYSQL_PASSWORD');
+    echo "bb";
     echo $dsn;
     echo $user;
     echo $password;
