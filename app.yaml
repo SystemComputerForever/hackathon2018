@@ -3,10 +3,6 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /www
-  script: /www/api1.php
-
-
 -url: /.*
   script: conn.php
 
