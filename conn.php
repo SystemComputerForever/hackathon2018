@@ -9,13 +9,13 @@
 
     // $socket = '/cloudsql/hackathon-718718:asia-east1:travel718718';
     
-    $dsn = getenv('MYSQL_DSN');
-    $user = getenv('MYSQL_USER');
-    $password = getenv('MYSQL_PASSWORD');
-    echo "bb";
-    echo $dsn;
-    echo $user;
-    echo $password;
+    // $dsn = getenv('MYSQL_DSN');
+    // $user = getenv('MYSQL_USER');
+    // $password = getenv('MYSQL_PASSWORD');
+    // echo "bb";
+    // echo $dsn;
+    // echo $user;
+    // echo $password;
 
-    date_default_timezone_set('Asia/Hong_Kong');
+    // date_default_timezone_set('Asia/Hong_Kong');
 ?>
