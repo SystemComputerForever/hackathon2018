@@ -12,3 +12,6 @@ env_variables:
   MYSQL_DSN: mysql:unix_socket=/cloudsql/hackathon-718718:asia-east1:travel718718;dbname=travel
   MYSQL_USER: root
   MYSQL_PASSWORD: root
+
+beta_settings:
+    cloud_sql_instances: "hackathon-718718:asia-east1:travel718718"
