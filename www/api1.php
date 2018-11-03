@@ -16,4 +16,6 @@
     $select = $pdo->prepare('select * from country');
     $select->execute();
     var_dump($select);
+    echo $select;
+    echo 'end of file';
 ?>
