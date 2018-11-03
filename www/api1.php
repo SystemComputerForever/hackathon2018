@@ -8,14 +8,14 @@
     // $user = 'root';
     // $password = 'root';
     $pdo = new PDO($dsn, $user, $password);
-    
-    // Create the database if it doesn't exist
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo 'aa';
+    // // Create the database if it doesn't exist
+    // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
 
-    $select = $pdo->prepare('select * from country');
-    $select->execute();
-    var_dump($select);
-    echo $select;
+    // $select = $pdo->prepare('select * from country');
+    // $select->execute();
+    // var_dump($select);
+    // echo $select;
     echo 'end of file';
 ?>
