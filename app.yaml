@@ -3,7 +3,7 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /.*
+- url: ./www/.*
   script: api1.php
 
 env_variables:
