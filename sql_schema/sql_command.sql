@@ -303,6 +303,7 @@ create table plan(
     est_days double(5,1) not null,
     start_date DATETIME not null,
     end_date DATETIME not null,
+    requirements varchar(250) not null,
     images LONGBLOB,
     primary key(plan_id),
     foreign key (country_id) references country (country_id)
@@ -324,7 +325,7 @@ create table comment(
     msg varchar(255) not null,
     comment_level tinyint(1) not null,
     primary key (comment_id),
-    foreign key (pln_id) references plan (plan_id),
+    foreign key (plan_id) references plan (plan_id),
     foreign key (comment_level) references commentLevel (comment_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
