@@ -4,10 +4,13 @@
     $dsn = getenv('MYSQL_DSN');
     $user = getenv('MYSQL_USER');
     $password = getenv('MYSQL_PASSWORD');
+    echo $dsn;
+    echo $user;
+    echo $password;
     // $dsn = 'mysql:unix_socket=/cloudsql/hackathon-718718:asia-east1:travel718718;dbname=travel';
     // $user = 'root';
     // $password = 'root';
-    $pdo = new PDO($dsn, $user, $password);
+    // $pdo = new PDO($dsn, $user, $password);
     echo 'aa';
     // // Create the database if it doesn't exist
     // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
