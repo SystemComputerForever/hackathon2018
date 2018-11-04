@@ -3,12 +3,12 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /countries
+- url: /location/countries
   script: www/getcountries.php
-- url: /citybycountry
+- url: /location/citybycountry
   script: www/getcitybycid.php
-- url: /suppermoment
-  script: www/api1.php
+- url: /user/createaccount
+  script: www/adduser.php
 - url: /conn
   script: conn.php
 - url: /images
@@ -24,3 +24,7 @@ env_variables:
   MYSQL_USER: root
   MYSQL_PASSWORD: root
   enable_stackdriver_integration: true
+  e_key: qzg03cZ8yWS8ky3ZVpKLPRTaMjzgYLaK
+
+beta_settings:
+  cloud_sql_instances: "mysql:unix_socket=/cloudsql/hackathon-718718:asia-east1:travel718718;dbname=travel;charset=utf8"
