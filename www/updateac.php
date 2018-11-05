@@ -1,20 +1,12 @@
 <?php
+    //update last name, first name, country, city
     try{
         extract($_GET);
         require_once('../conn.php');
         include('./init.php');
-        //generate user id
-        $user_id = date('Ym');
-        $curr_num = intval(getNumofUser($pdo));
-        $new_num = $curr_num;
-        do{
-            ++$new_num;
-            $user_id.=sprintf('%014d',$new_num);
-        }while(checkIDDuplicate($user_id,"user","u_id",$pdo)>0);
 
-        echo $user_id.'<br/>';
-        //testing sql: insert into user(u_id, user_name, email, phone_num, pwd, last_name, first_name, yob, gender, country_id, city_id) values('20181100000000000001', 'a user', encode('a@a.com','$e_key'), encode('11111111','$e_key'), encode('test1234','$e_key'), 'a', 'a', '1999', 0, '96', '30');
-        // $data = [$user_id, 'a user', encode('a@a.com',$e_key),encode('11111111',$e_key),encode('test1234',$e_key),'a','then b','1999','0','86','30'];
+        
+        $data = [$user_id, $lname, $fname,$coid,$ctid];
         // $pdo->prepare('insert into user(u_id, user_name, email, phone_num, pwd, last_name, first_name, yob, gender, country_id, city_id) values(:uid, :user_name, :email, :phone, :pwd, :lname, :fname, :yob, :gender, :country, :city);');
         // $pdo->prepare('insert into user(u_id, user_name, email, phone_num, pwd, last_name, first_name, yob, gender, country_id, city_id) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);');
         // $sql = 'insert into user(u_id, user_name, email, phone_num, pwd, last_name, first_name, yob, gender, country_id, city_id) values('.$user_id.', '.'a user'.', encode(\'a@a.com\','.$e_key.'), encode(\'11111111\','.$e_key.'), encode(\'test1234\','.$e_key.'), '..', '..', '..', '..', '..', '..')';

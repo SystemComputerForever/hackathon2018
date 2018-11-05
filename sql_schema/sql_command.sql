@@ -304,7 +304,7 @@ create table plan(
     start_date DATETIME not null,
     end_date DATETIME not null,
     requirements varchar(250) not null,
-    images LONGBLOB,
+    images JSON,
     primary key(plan_id),
     foreign key (country_id) references country (country_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -329,3 +329,8 @@ create table comment(
     foreign key (comment_level) references commentLevel (comment_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+create table applications(
+    target_uid varchar(20) not null,
+    from_uid varchar(20) not null,
+    plan_id varchar(20) not null,
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
