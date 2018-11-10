@@ -305,6 +305,7 @@ create table plan(
     end_date DATETIME not null,
     requirements varchar(250) not null,
     images JSON,
+    u_id varchar(20) NOT NULL,
     primary key(plan_id),
     foreign key (country_id) references country (country_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -329,8 +330,17 @@ create table comment(
     foreign key (comment_level) references commentLevel (comment_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--update--
 create table applications(
-    target_uid varchar(20) not null,
-    from_uid varchar(20) not null,
-    plan_id varchar(20) not null,
+plan_id varchar(20) NOT NULL,
+participant_id varchar(20) NOT NULL,
+acceptable tinyint(1) NOT NULL,
+submitted_date DATETIME not null,
+holder tinyint(1) not null default 0,
+primary key(plan_id, participant_id),
+foreign key (plan_id) references plan (plan_id),
+foreign key (participant_id) references user (u_id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+--participant_id --> target_id--
+
+--before add foreign key -->set foreign_key_checks=0 --
