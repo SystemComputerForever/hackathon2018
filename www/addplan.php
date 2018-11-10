@@ -26,20 +26,22 @@
         $end_date = "2018-11-13 20:40";
         $requirements = "tes\"t p'lan 1";
         $images = '{"images":["1","2","3"]}';
+        $uid = '20181100000000000012';
 
+        $data = [$plan_id, $title, $country,$routes,$est_days,$start_date, $end_date, $requirements, $images, $uid];
+        $insert = $pdo->prepare('insert into plan(plan_id, title, country_id, routes, est_days, start_date, end_date, requirements,images, u_id) values(?,?,?,?,?,?,?,?,?,?);');
 
-        $data = [$plan_id, $title, $country,$routes,$est_days,$start_date, $end_date, $requirements, $images];
-        $insert = $pdo->prepare('insert into plan(plan_id, title, country_id, routes, est_days, start_date, end_date, requirements,images) values(?,?,?,?,?,?,?,?,?);');
-
-
-        $result = array();
-        // echo $insert->execute($data);
-        if($insert->execute($data)){
-            array_push($result,array('status'=>'ok'));
-        }else{
-            array_push($result,array('status'=>'no'));
+        if($insert){
+            $result = array();
+            // echo $insert->execute($data);
+            if($insert->execute($data)){
+                array_push($result,array('status'=>'ok'));
+            }else{
+                array_push($result,array('status'=>'no'));
+            }
+            echo json_encode($result);
         }
-        echo json_encode($result);
+
 
     } catch(Exception $e){
         die($e->getMessage());
