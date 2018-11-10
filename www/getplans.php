@@ -4,7 +4,7 @@
         require_once('../conn.php');
         include('./init.php');
 
-        $data = ['plan_id','title','country_id','routes','est_days','start_date','end_date','requirements','images'];
+        $data = ['plan_id','title','country_id','routes','est_days','start_date','end_date','requirements','images','u_id'];
 
         $select = $pdo->query("select * from plan");
         $jr = array();

@@ -289,7 +289,7 @@ create table user(
     yob YEAR(4) NOT NULL,
     gender tinyint(1) NOT NULL,
     country_id varchar(5) not null,
-    city_id int(11) not null,
+    p_img blob null,
     primary key(u_id),
     foreign key (country_id) references country(country_id),
     foreign key (city_id) references city(city_id)
@@ -325,6 +325,7 @@ create table comment(
     from_uid varchar(20) not null,
     msg varchar(255) not null,
     comment_level tinyint(1) not null,
+    img json,
     primary key (comment_id),
     foreign key (plan_id) references plan (plan_id),
     foreign key (comment_level) references commentLevel (comment_id)
@@ -336,7 +337,7 @@ plan_id varchar(20) NOT NULL,
 participant_id varchar(20) NOT NULL,
 acceptable tinyint(1) NOT NULL,
 submitted_date DATETIME not null,
-holder tinyint(1) not null default 0,
+holder tinyint(1) not null default false,
 primary key(plan_id, participant_id),
 foreign key (plan_id) references plan (plan_id),
 foreign key (participant_id) references user (u_id)

@@ -7,8 +7,17 @@ handlers:
   script: www/getcountries.php
 - url: /location/citybycountry
   script: www/getcitybycid.php
+
 - url: /user/createaccount
   script: www/adduser.php
+
+- url: /plans/getplans
+  script: www/getplans.php
+- url: /plans/getplanbyid
+  script: www/getplanbyid.php
+- url: /plans/addplan.php
+  script: www/addplan.php
+
 - url: /conn
   script: conn.php
 - url: /images
