@@ -19,7 +19,7 @@ handlers:
   script: www/addplan.php
 
 - url: /comment/addcomment
-  script: www/addcomment.php
+  script: www/addcomment.php 
 - url: /conn
   script: conn.php
 - url: /images
