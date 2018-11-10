@@ -1,6 +1,6 @@
 <?php
     try{
-        extract($_GET);
+        extract($_GET); //no need!!!
         require_once('../conn.php');
         include('./init.php');
 
