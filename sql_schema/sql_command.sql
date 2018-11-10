@@ -335,7 +335,7 @@ create table comment(
 create table applications(
 plan_id varchar(20) NOT NULL,
 participant_id varchar(20) NOT NULL,
-acceptable tinyint(1) NOT NULL,
+acceptable tinyint(1) NOT NULL default false,
 submitted_date DATETIME not null,
 holder tinyint(1) not null default false,
 primary key(plan_id, participant_id),
