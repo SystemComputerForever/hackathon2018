@@ -28,9 +28,9 @@
         $images = '{"images":["1","2","3"]}';
         $uid = '20181100000000000012';
         $holder = 1;
-
-        $data = [$plan_id, $title, $country,$routes,$est_days,$start_date, $end_date, $requirements, $images, $uid];
-        $insert = $pdo->prepare('insert into plan(plan_id, title, country_id, routes, est_days, start_date, end_date, requirements,images, u_id) values(?,?,?,?,?,?,?,?,?,?);');
+        $created_date = date('Y-m-d h:s');
+        $data = [$plan_id, $title, $country,$routes,$est_days,$start_date, $end_date, $requirements, $images, $uid, $created_date];
+        $insert = $pdo->prepare('insert into plan(plan_id, title, country_id, routes, est_days, start_date, end_date, requirements,images, u_id, created_date) values(?,?,?,?,?,?,?,?,?,?,?);');
 
         if($insert){
             $result = array();

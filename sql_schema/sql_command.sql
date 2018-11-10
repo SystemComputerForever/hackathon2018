@@ -305,6 +305,7 @@ create table plan(
     end_date DATETIME not null,
     requirements varchar(250) not null,
     images JSON,
+    created_date datetime not null,
     u_id varchar(20) NOT NULL,
     primary key(plan_id),
     foreign key (country_id) references country (country_id)
@@ -326,6 +327,7 @@ create table comment(
     msg varchar(255) not null,
     comment_level tinyint(1) not null,
     img json,
+    created_date datetime not null,
     primary key (comment_id),
     foreign key (plan_id) references plan (plan_id),
     foreign key (comment_level) references commentLevel (comment_id)
