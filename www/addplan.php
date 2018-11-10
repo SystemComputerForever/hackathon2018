@@ -27,6 +27,7 @@
         $requirements = "tes\"t p'lan 1";
         $images = '{"images":["1","2","3"]}';
         $uid = '20181100000000000012';
+        $holder = 1;
 
         $data = [$plan_id, $title, $country,$routes,$est_days,$start_date, $end_date, $requirements, $images, $uid];
         $insert = $pdo->prepare('insert into plan(plan_id, title, country_id, routes, est_days, start_date, end_date, requirements,images, u_id) values(?,?,?,?,?,?,?,?,?,?);');
@@ -39,6 +40,8 @@
             }else{
                 array_push($result,array('status'=>'no'));
             }
+            //add holder record to applications table
+            addApplication($plan_id, $uid, $holder,$pdo);
             echo json_encode($result);
         }
 

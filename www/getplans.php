@@ -4,9 +4,9 @@
         require_once('../conn.php');
         include('./init.php');
 
-        $data = ['plan_id','title','country_id','routes','est_days','start_date','end_date','requirements','images','u_id'];
+        $data = ['plan_id','title','country_id','routes','est_days','start_date','end_date','requirements','images','u_id','country'];
 
-        $select = $pdo->query("select * from plan");
+        $select = $pdo->query("select * from plan as p, country as c where p.country_id = c.country_id");
         $jr = array();
         if($select->rowCount() > 0){
             foreach($select->fetchAll(PDO::FETCH_BOTH) as $row){
