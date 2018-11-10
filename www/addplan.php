@@ -37,11 +37,11 @@
             // echo $insert->execute($data);
             if($insert->execute($data)){
                 array_push($result,array('status'=>'ok'));
+                //add holder record to applications table
+                addApplication($plan_id, $uid, $holder,$pdo);
             }else{
                 array_push($result,array('status'=>'no'));
             }
-            //add holder record to applications table
-            addApplication($plan_id, $uid, $holder,$pdo);
             echo json_encode($result);
         }
 
