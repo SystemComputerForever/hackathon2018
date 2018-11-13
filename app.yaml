@@ -24,7 +24,8 @@ handlers:
 
 - url: /comment/addcomment
   script: www/addcomment.php 
-
+- url: /comment/getusers
+  script: www/listofparticipants.php
 
 - url: /
   script: 404.php
