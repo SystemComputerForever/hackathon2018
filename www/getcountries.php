@@ -10,6 +10,7 @@
             array_push($jr, $temp);
         }
     }
+    $select->closeCursor();
     echo json_encode($jr);
     } catch(Exception $e){
         die($e->getMessage());

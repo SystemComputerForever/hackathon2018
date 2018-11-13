@@ -4,8 +4,8 @@
         require_once('../conn.php');
         include('./init.php');
         //test variables
-        $uid = '20181100000000000005';
-        $plan_id = 'plan2018110547328343';
+        $uid = '20181100000000000003';
+        $plan_id = 'plan2018112953513017';
         $holder = 0;
         $result = array();
         if(addApplication($plan_id,$uid, $holder, $pdo)){

@@ -25,7 +25,7 @@
         $start_date = '2018-11-11 9:40';
         $end_date = "2018-11-13 20:40";
         $requirements = "tes\"t p'lan 1";
-        $images = '{"images":["1","2","3"]}';
+        $images = '["1","2","3"]';
         $uid = '20181100000000000012';
         $holder = 1;
         $created_date = date('Y-m-d h:s');
